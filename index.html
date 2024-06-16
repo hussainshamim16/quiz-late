@@ -7,8 +7,9 @@
     <title>quizLet</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <section id="stdLogin" class="show">
+    <!-- <section id="stdLogin" class="show">
         <form action="javaScript:void(0)">
             <input type="text" placeholder="Enter Name" id="stdName">
             <span id="nameError" class="hide">Enter your Name !</span>
@@ -19,6 +20,49 @@
     </section>
     <section id="startbtn" class="hide">
         <button type="submit" onclick="quizStart()">Start Quiz</button>
+    </section> -->
+    <section id="quizContainer">
+        <!-- header -->
+        <div id="layout">
+            <div id="quizSecStdDta">
+                Name :
+                <span id="nameOfStd">Muhammad hussain</span> <br>
+                Roll Number :
+                <span id="rollNmuberOfStd">226825</span>
+            </div>
+            <div id="quizAndTime">
+                time :
+                <span id="quizTime">
+                    0:00
+                </span>
+            </div>
+        </div>
+        <hr>
+        <!-- section -->
+        <div id="qiuzUI">
+            <div id="Quizquiestion">
+                <h1 id="quiestion">HTML is a</h1>
+            </div>
+            <div id="quizOptions">
+                <ul id="quizLI">
+                    <li>programin Language</li>
+                    <li>tag Language</li>
+                    <li>scripting Language</li>
+                    <li>low Language</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <!-- footer -->
+        <div id="footer">
+            <div id="conter">
+                <span id="count">1</span> /
+                <span id="total">5</span>
+            </div>
+            <div id="nextBtn">
+                <button type="submit" onclick="next()">Next Quiz</button>
+            </div>
+        </div>
     </section>
     <script src="./script.js"></script>
 </body>
