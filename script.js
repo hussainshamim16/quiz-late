@@ -4,6 +4,8 @@ var stdName = document.getElementById("stdName")
 var stdRollNumber = document.getElementById("stdRollNumber")
 var nameError = document.getElementById("nameError")
 var rollNumbererror = document.getElementById("rollNumbererror")
+// btn start 
+var startbtn = document.getElementById("startbtn")
 // variable section
 
 // fnc section
@@ -29,9 +31,14 @@ function stdSumbit(element) {
         console.log("solve")
         rollNumbererror.className = "hide";
         stdLogin.style.display = "none"
+        startbtn.className = "show"
 
     }
 
+}
+/// start button
+function quizStart(){
+    startbtn.style.display = "none"
 }
 
 // fnc section
