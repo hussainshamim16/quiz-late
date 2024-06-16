@@ -95,7 +95,7 @@ var quiestionQuiz = [
             c: "black 3",
             d: "black 3",
         },
-        answer: "black"
+        answer: "black 3"
     },
     {
         id: 4,
@@ -106,7 +106,7 @@ var quiestionQuiz = [
             c: "Banana 4",
             d: "Banana 4",
         },
-        answer: "green"
+        answer: "Banana 4"
     }
 ];
 
@@ -160,7 +160,15 @@ function next(eleme) {
 }
 function liHover(par) {
     nextbuttonup.className = "show";
-    console.log(par === quiestionQuiz[emptyString].answer)
+    if (par.innerHTML == quiestionQuiz[emptyString].answer) {
+        
+        console.log("macth")
+    } else {
+        
+        console.log("no Macth")
+    }
+    console.log(quiestionQuiz[emptyString].answer)
+    console.log(par[0])
     
 }
 // fnc section
