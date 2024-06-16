@@ -26,9 +26,9 @@
         <div id="layout">
             <div id="quizSecStdDta">
                 Name :
-                <span id="nameOfStd">Muhammad hussain</span> <br>
+                <span id="nameOfStd"></span> <br>
                 Roll Number :
-                <span id="rollNmuberOfStd">226825</span>
+                <span id="rollNmuberOfStd"></span>
             </div>
             <div id="quizAndTime">
                 time :
@@ -41,14 +41,15 @@
         <!-- section -->
         <div id="qiuzUI">
             <div id="Quizquiestion">
-                <h1 id="quiestion">HTML is a</h1>
+                <h1 id="quiestion">What Does Css full Form</h1>
             </div>
             <div id="quizOptions">
                 <ul id="quizLI">
-                    <li>programin Language</li>
-                    <li>tag Language</li>
-                    <li>scripting Language</li>
-                    <li>low Language</li>
+                    
+                    <li onclick="liHover(this)">programin Language</li>
+                    <li onclick="liHover(this)">tag Language</li>
+                    <li onclick="liHover(this)">scripting Language</li>
+                    <li  onclick="liHover(this)">low Language</li>
                 </ul>
             </div>
         </div>
@@ -60,7 +61,7 @@
                 <span id="total">5</span>
             </div>
             <div id="nextBtn">
-                <button type="submit" onclick="next()">Next Quiz</button>
+                <button type="submit" onclick="next(this)" class="hide" id="nextbuttonup">Next Quiz</button>
             </div>
         </div>
     </section>

@@ -24,6 +24,8 @@ var conter = document.getElementById("conter")
 var count = document.getElementById("count")
 var total = document.getElementById("total")
 var nextBtn = document.getElementById("nextBtn")
+var nextbuttonup = document.getElementById("nextbuttonup")
+
 // variable section
 
 // fnc section
@@ -43,8 +45,8 @@ function stdSumbit(element) {
         rollNumbererror.className = "show"
         return
     } else {
-       localStorage.setItem("student Name", stdName.value)
-       localStorage.setItem("student Roll Number", stdRollNumber.value)
+        localStorage.setItem("student Name", stdName.value)
+        localStorage.setItem("student Roll Number", stdRollNumber.value)
         stdName.value = ""
         stdRollNumber.value = ""
         console.log("solve")
@@ -56,36 +58,110 @@ function stdSumbit(element) {
 
 }
 /// start button
-function quizStart(){
+function quizStart() {
     startbtn.style.display = "none"
 }
 /// quiz section;
+
 var quiestionQuiz = [
-{
-    id:1,
-    quiestion: "who is dark color",
-    option:{
-        a:"blue",
-        b:"yellow",
-        c:"red",
-        d:"green",
+    {
+        id: 1,
+        quiestion: "who is dark color",
+        option: {
+            a: "yellow 1",
+            b: "yellow 1",
+            c: "yellow 1",
+            d: "yellow 1",
+        },
+        answer: "yellow 1"
     },
-    answer: "red"
-}
+    {
+        id: 2,
+        quiestion: "who is simple color",
+        option: {
+            a: "apple 2",
+            b: "apple 2",
+            c: "apple 2",
+            d: "apple 2",
+        },
+        answer: "apple 2"
+    },
+    {
+        id: 3,
+        quiestion: "who is extra dark color",
+        option: {
+            a: "black 3",
+            b: "black 3",
+            c: "black 3",
+            d: "black 3",
+        },
+        answer: "black"
+    },
+    {
+        id: 4,
+        quiestion: "who is sabz color",
+        option: {
+            a: "Banana 4",
+            b: "Banana 4",
+            c: "Banana 4",
+            d: "Banana 4",
+        },
+        answer: "green"
+    }
 ];
+
+
 // quiz header
 nameOfStd.innerHTML = localStorage.getItem("student Name")
 rollNmuberOfStd.innerHTML = localStorage.getItem("student Roll Number")
 quizTime.innerHTML = "01:00";
 // quiestion quiz
-quiestion.innerHTML = "Html is a good way"
+// quiestion.innerHTML = "Html is a good way"
 // quizOptions.innerHTML = "red"
 // footer
-count.innerHTML = "1"
-total.innerHTML = "7"
+
+
+var correct;
+var wrong;
+var emptyString = 0;
+total.innerHTML = quiestionQuiz.length +1
+
+// console.log(quiestion)
 // next Quiz
-function next(){
-    console.log("red")
+function start() {
+    quiestion.innerHTML = quiestionQuiz[emptyString].quiestion;
+    nextbuttonup.className = "hide"
+    quizLI.innerHTML = ""
+
+    for (var key in quiestionQuiz[emptyString].option) {
+
+        // console.log(key ,quiestionQuiz[emptyString].quiestion)
+
+        var optionsHtml = (quiestionQuiz[emptyString].option[key])
+        quizLI.innerHTML += `<li onclick="liHover(this)">${optionsHtml}</li>`
+
+
+    }
+
+    // 
+    // console.log(emptyString++)
+
+}
+function next(eleme) {
+    if (emptyString < quiestionQuiz.length - 1) {
+        emptyString++
+        count.innerHTML = emptyString+1
+
+    } else {
+        console.log("Quiz Over")
+
+    }
+    start()
+}
+function liHover(par) {
+    nextbuttonup.className = "show";
+    console.log(par === quiestionQuiz[emptyString].answer)
+    
 }
 // fnc section
 
