@@ -60,6 +60,19 @@ function quizStart(){
     startbtn.style.display = "none"
 }
 /// quiz section;
+var quiestionQuiz = [
+{
+    id:1,
+    quiestion: "who is dark color",
+    option:{
+        a:"blue",
+        b:"yellow",
+        c:"red",
+        d:"green",
+    },
+    answer: "red"
+}
+];
 // quiz header
 nameOfStd.innerHTML = localStorage.getItem("student Name")
 rollNmuberOfStd.innerHTML = localStorage.getItem("student Roll Number")
