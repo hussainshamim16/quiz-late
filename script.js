@@ -26,6 +26,7 @@ var total = document.getElementById("total")
 var nextBtn = document.getElementById("nextBtn")
 var nextbuttonup = document.getElementById("nextbuttonup")
 
+
 // variable section
 
 // fnc section
@@ -124,7 +125,7 @@ quizTime.innerHTML = "01:00";
 var correct;
 var wrong;
 var emptyString = 0;
-total.innerHTML = quiestionQuiz.length +1
+total.innerHTML = quiestionQuiz.length + 1
 
 // console.log(quiestion)
 // next Quiz
@@ -138,7 +139,7 @@ function start() {
         // console.log(key ,quiestionQuiz[emptyString].quiestion)
 
         var optionsHtml = (quiestionQuiz[emptyString].option[key])
-        quizLI.innerHTML += `<li onclick="liHover(this)">${optionsHtml}</li>`
+        quizLI.innerHTML += `<li onclick="liHover(this)" id="quizList">${optionsHtml}</li>`
 
 
     }
@@ -150,10 +151,10 @@ function start() {
 function next(eleme) {
     if (emptyString < quiestionQuiz.length - 1) {
         emptyString++
-        count.innerHTML = emptyString+1
+        count.innerHTML = emptyString + 1
 
     } else {
-        console.log("Quiz Over")
+        quizContainer.style.display = "none"
 
     }
     start()
@@ -161,15 +162,15 @@ function next(eleme) {
 function liHover(par) {
     nextbuttonup.className = "show";
     if (par.innerHTML == quiestionQuiz[emptyString].answer) {
-        
+        quizList.style.pointerEvents = "none"
+        var quizList = document.getElementById("quizList")
         console.log("macth")
     } else {
-        
         console.log("no Macth")
     }
-    console.log(quiestionQuiz[emptyString].answer)
-    console.log(par[0])
-    
+    // console.log(quiestionQuiz[emptyString].answer)
+
+
 }
 // fnc section
 

@@ -7,7 +7,12 @@
     visibility: visible;
 }
 
+li{
+    /* pointer-events: none; */
+}
+
 li:hover{
 cursor: pointer;
 background-color: red;
+
 }
