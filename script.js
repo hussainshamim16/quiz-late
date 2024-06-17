@@ -161,9 +161,9 @@ function next(eleme) {
 }
 function liHover(par) {
     nextbuttonup.className = "show";
+    var quizList = document.getElementById("quizList")
     if (par.innerHTML == quiestionQuiz[emptyString].answer) {
         quizList.style.pointerEvents = "none"
-        var quizList = document.getElementById("quizList")
         console.log("macth")
     } else {
         console.log("no Macth")
