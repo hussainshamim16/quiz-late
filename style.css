@@ -7,11 +7,11 @@
     visibility: visible;
 }
 
-li{
-    /* pointer-events: none; */
-}
+/* #quizLet{
+    pointer-events: none;
+} */
 
-li:hover{
+li::selection{
 cursor: pointer;
 background-color: red;
 

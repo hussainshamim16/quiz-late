@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <!-- <section id="stdLogin" class="show">
+    <section id="stdLogin" class="show">
         <form action="javaScript:void(0)">
             <input type="text" placeholder="Enter Name" id="stdName">
             <span id="nameError" class="hide">Enter your Name !</span>
@@ -20,8 +20,8 @@
     </section>
     <section id="startbtn" class="hide">
         <button type="submit" onclick="quizStart()">Start Quiz</button>
-    </section> -->
-    <section id="quizContainer">
+    </section>
+    <section id="quizContainer" class="hide">
         <!-- header -->
         <div id="layout">
             <div id="quizSecStdDta">
@@ -41,12 +41,12 @@
         <!-- section -->
         <div id="qiuzUI">
             <div id="Quizquiestion">
-                <h1 id="quiestion">What Does Css full Form</h1>
+                <h1 id="quiestion"></h1>
             </div>
             <div id="quizOptions">
                 <ul id="quizLI">
                     
-                    <li onclick="liHover(this)">programin Language</li>
+                    <li onclick="liHover(this)" id="quizLet">programin Language</li>
                     <li onclick="liHover(this)">tag Language</li>
                     <li onclick="liHover(this)">scripting Language</li>
                     <li  onclick="liHover(this)">low Language</li>

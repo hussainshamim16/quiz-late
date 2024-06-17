@@ -1,4 +1,4 @@
-// variable section
+// login section
 var stdLogin = document.getElementById("stdLogin")
 var stdName = document.getElementById("stdName")
 var stdRollNumber = document.getElementById("stdRollNumber")
@@ -46,22 +46,19 @@ function stdSumbit(element) {
         rollNumbererror.className = "show"
         return
     } else {
-        localStorage.setItem("student Name", stdName.value)
-        localStorage.setItem("student Roll Number", stdRollNumber.value)
+        rollNumbererror.className = "hide";
+        startbtn.className = "show"
+        stdLogin.style.display = "none"
+        console.log("solve")
+        
+    }
+    
+   var sname = localStorage.setItem("student Name", stdName.value)
+    var sroll = localStorage.setItem("student Roll Number", stdRollNumber.value)
         stdName.value = ""
         stdRollNumber.value = ""
-        console.log("solve")
-        rollNumbererror.className = "hide";
-        stdLogin.style.display = "none"
-        startbtn.className = "show"
-
-    }
-
 }
-/// start button
-function quizStart() {
-    startbtn.style.display = "none"
-}
+
 /// quiz section;
 
 var quiestionQuiz = [
@@ -92,9 +89,9 @@ var quiestionQuiz = [
         quiestion: "who is extra dark color",
         option: {
             a: "black 3",
-            b: "black 3",
-            c: "black 3",
-            d: "black 3",
+            b: "black",
+            c: "blak 3",
+            d: "blck",
         },
         answer: "black 3"
     },
@@ -111,9 +108,11 @@ var quiestionQuiz = [
     }
 ];
 
+console.log(quiestionQuiz)
 
 // quiz header
-nameOfStd.innerHTML = localStorage.getItem("student Name")
+
+nameOfStd.innerHTML = localStorage.getItem("student Roll Number")
 rollNmuberOfStd.innerHTML = localStorage.getItem("student Roll Number")
 quizTime.innerHTML = "01:00";
 // quiestion quiz
@@ -124,13 +123,26 @@ quizTime.innerHTML = "01:00";
 
 var correct;
 var wrong;
-var emptyString = 0;
-total.innerHTML = quiestionQuiz.length + 1
+var emptyString = 0
+total.innerHTML = quiestionQuiz.length
 
-// console.log(quiestion)
-// next Quiz
-function start() {
+// key of object
+
+// var optQuiz = quiestionQuiz[emptyString].option;
+// console.log(optQuiz)
+
+
+
+// START Quiz
+/// start button
+function quizStart() {
+
+    startbtn.style.display = "none"
+    quizContainer.className = "show"
+
+
     quiestion.innerHTML = quiestionQuiz[emptyString].quiestion;
+    console.log(emptyString)
     nextbuttonup.className = "hide"
     quizLI.innerHTML = ""
 
@@ -138,7 +150,7 @@ function start() {
 
         // console.log(key ,quiestionQuiz[emptyString].quiestion)
 
-        var optionsHtml = (quiestionQuiz[emptyString].option[key])
+        var optionsHtml = quiestionQuiz[emptyString].option[key]
         quizLI.innerHTML += `<li onclick="liHover(this)" id="quizList">${optionsHtml}</li>`
 
 
@@ -148,29 +160,51 @@ function start() {
     // console.log(emptyString++)
 
 }
+
+// NEXT BUTTON
+
 function next(eleme) {
     if (emptyString < quiestionQuiz.length - 1) {
-        emptyString++
-        count.innerHTML = emptyString + 1
+        count.innerHTML++
+        // emptyString++
 
     } else {
         quizContainer.style.display = "none"
 
     }
-    start()
+    quizStart()
 }
+
 function liHover(par) {
+
+
+
     nextbuttonup.className = "show";
+    var listItem = quizLI.getElementsByTagName("li")
     var quizList = document.getElementById("quizList")
+
     if (par.innerHTML == quiestionQuiz[emptyString].answer) {
-        quizList.style.pointerEvents = "none"
+        quizList.style.background = "green"
+        par.style.pointerEvents = "none"
         console.log("macth")
     } else {
+        par.style.pointerEvents = "none";
+        par.style.backgroundColor = "red"
         console.log("no Macth")
     }
+
+    for (var par of listItem) {
+        if (par.innerHTML == quiestionQuiz[emptyString].answer) {
+            quizList.style.background = "green"
+            console.log("correct Answer")
+
+        }
+    }
+
     // console.log(quiestionQuiz[emptyString].answer)
 
 
+    // quizList.style.backgroundColor ="blue"
 }
 // fnc section
 
