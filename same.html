@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quizLet</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section id="startbtn" class="show">
+        <button type="submit" onclick="quizStart()">Start Quiz</button>
+    </section>
+    <section id="quizContainer" class="hide">
+        <!-- header -->
+        <div id="layout">
+            <div id="quizSecStdDta">
+                Name :
+                <span id="nameOfStd"></span> <br>
+                Roll Number :
+                <span id="rollNmuberOfStd"></span>
+            </div>
+            <div id="quizAndTime">
+                time :
+                <span id="quizTime">
+                   
+                </span>
+            </div>
+        </div>
+        <!-- <hr> -->
+        <!-- section -->
+        <div id="qiuzUI">
+            <div id="Quizquiestion">
+                <h1 id="quiestion"></h1>
+            </div>
+            <div id="quizOptions">
+                <ul id="quizLI">
+                    
+                    <!-- <li onclick="liHover(this)" id="quizLet">programin Language</li>
+                    <li onclick="liHover(this)">tag Language</li>
+                    <li onclick="liHover(this)">scripting Language</li>
+                    <li  onclick="liHover(this)">low Language</li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- <hr> -->
+        <!-- footer -->
+        <div id="footer">
+            <div id="conter">
+                <span id="count">1</span> /
+                <span id="total">5</span>
+            </div>
+            <div id="nextBtn">
+                <button type="submit" onclick="next(this)" class="hide" id="nextbuttonup">Next Quiz</button>
+            </div>
+        </div>
+    </section>
+    <section id="resultUI"  class="hide">
+      
+
+            <h3>percentage</h3>
+            <h1 id="persontage"></h1>
+            <h3>YOU are !</h3>
+            <h1 id="result"></h1>
+            <form action="JavaScript:void(0)">
+                <button onclick="returnn()">Try Again</button>
+            </form>
+        
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>

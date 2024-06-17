@@ -275,12 +275,12 @@ function liHover(par) {
 
     if (par.innerHTML == ans) {
         // listItem.style.pointerEvents ="none"
-        par.style.background = "green"
+        par.style.background = "#0004ff9f"
         // console.log("macth")
         correctAnsCount++
     } else {
         // par.style.pointerEvents = "none";
-        par.style.backgroundColor = "red"
+        par.style.backgroundColor = "#ff00009f"
         // console.log("no Macth")
         wrongAnsCount++
     }
@@ -288,7 +288,7 @@ function liHover(par) {
     for (var par of listItem) {
         if (par.innerHTML == quiestionQuiz[emptyString].answer) {
 
-            par.style.background = "green"
+            par.style.background = "#0004ff9f"
             // console.log("correct Answer" , quiestionQuiz[emptyString].answer)
 
         }
@@ -321,42 +321,52 @@ function liHover(par) {
         case 1:
             persontage.innerHTML = "10%";
             result.innerText = 'FAIL 😭';
+            result.style.color = "red"
             break;
         case 2:
             persontage.innerHTML = "20%";
             result.innerText = 'FAIL 😫';
+            result.style.color = "red"
             break;
         case 3:
             persontage.innerHTML = "30%";
             result.innerText = 'FAIL 😓';
+            result.style.color = "red"
             break;
         case 4:
             persontage.innerHTML = "40%";
             result.innerText = 'FAIL 😥';
+            result.style.color = "red"
             break;
         case 5:
             persontage.innerHTML = "50%";
             result.innerText = 'PASS 😊';
+            result.style.color = "#fffddc"
             break;
         case 6:
             persontage.innerHTML = "60%";
             result.innerText = 'PASS 😚';
+            result.style.color = "#fffddc"
             break;
         case 7:
             persontage.innerHTML = "70%";
             result.innerText = 'PASS NICE! 🙂';
+            result.style.color = "#fffddc"
             break;
         case 8:
             persontage.innerHTML = "80%";
             result.innerText = 'PASS GOOD JOB 🤗';
+            result.style.color = "#fffddc"
             break;
         case 9:
             persontage.innerHTML = "90%";
             result.innerText = 'PASS VERY GOOD 🤩';
+            result.style.color = "#fffddc"
             break;
         case 10:
             persontage.innerHTML = "100%";
             result.innerText = 'PASS EXELLENT 😎';
+            result.style.color = "#fffddc"
             break;
     
         default:

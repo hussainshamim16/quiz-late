@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Merienda:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 :root{
     --light:#a45fe6;
     --dark:#5639a6;
@@ -9,6 +10,7 @@
 *{
 
     font-family: "Merienda", cursive;
+    font-family: "Jost", sans-serif;
 }
 body{
     background-image: url(./images/10444284.jpg);
@@ -23,6 +25,9 @@ body{
 }
 
 li{
+    /* background-color: #ff00009f; */
+    /* background-color: #0004ff9f; */
+    border-radius: 5px;
     /* pointer-events: none; */
     padding: 2px 5px;
     transition-duration: 0.4s;
@@ -37,6 +42,15 @@ background-color: var(--light);
 border-radius: 5px;
 
 }
+#quizSecStdDta{
+/* color: black; */
+font-weight: 600;
+}
+
+#quizSecStdDta span,#count,#quizTime{
+color: var(--yellow);
+}
+
 #startbtn{
     /* border: 1px solid red; */
     text-align: center;
@@ -67,9 +81,10 @@ border-radius: 5px;
 #quizContainer{
     background-color: var(--dark);
     color: white;
-    padding: 10px 60px;
+    padding: 10px 40px;
     position: absolute;
     height: 80vh;
+    width: 60%;
 
     display: flex;
     justify-content: center;
@@ -79,12 +94,86 @@ border-radius: 5px;
     border-radius: 20px;
     box-shadow: 4px 10px 20px 2px #000000e1;
 
-    left: 33%;
+    left: 30%;
     top: 6%;
 
     font-family: "Luckiest Guy", cursive;
 }
+#result{
+    color: var(--yellow);
+}
+#qiuzUI{
+width: 90%;
+    /* border: 1px solid red; */
+}
+
+#Quizquiestion{
+    width: 90%;
+    /* font-size: 1.3rem; */
+    /* border: 1px solid red; */
+}
 #layout ,#qiuzUI{
     border-bottom: 3px solid var(--yellow);
-    margin: 2px 0px;
+    margin: 6px 0px;
+    
+}
+
+#layout{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    width: 90%;
+}
+#footer{
+    /* border: 1px solid red; */
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#footer #nextBtn button{
+  background-color: var(--white);
+  border: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  /* transition-duration: 0.5s; */
+  background-color: var(--yellow);
+  color: black;
+}
+#footer #nextBtn button:hover{
+    background-color: var(--white);
+    color: black;
+}
+#resultUI{
+    /* border: 1px solid red; */
+    width: 40%;
+    padding: 20px;
+    background-color: var(--dark);
+    border-radius: 10px;
+    color: white;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    box-shadow: 4px 10px 20px 2px #0000008f;
+    /* height: 60vh; */
+
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    line-height: -100;
+    /* flex-direction: column; */
+}
+#resultUI form button{
+    background-color: var(--white);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition-duration: 0.5s;
+    background-color: var(--yellow);
+    color: black;
 }
