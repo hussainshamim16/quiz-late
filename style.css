@@ -7,9 +7,9 @@
     visibility: visible;
 }
 
-/* #quizLet{
-    pointer-events: none;
-} */
+li{
+    /* pointer-events: none; */
+}
 
 li::selection{
 cursor: pointer;

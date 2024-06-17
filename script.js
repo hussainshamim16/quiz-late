@@ -14,7 +14,7 @@ var nameOfStd = document.getElementById("nameOfStd")
 var rollNmuberOfStd = document.getElementById("rollNmuberOfStd")
 var quizAndTime = document.getElementById("quizAndTime")
 var quizTime = document.getElementById("quizTime")
-var quizTimer ;
+var quizTimer;
 var qiuzUI = document.getElementById("qiuzUI")
 var Quizquiestion = document.getElementById("Quizquiestion")
 var quiestion = document.getElementById("quiestion")
@@ -84,7 +84,7 @@ var quiestionQuiz = [
     }
 ];
 
-console.log(quiestionQuiz)
+// console.log(quiestionQuiz)
 
 // timing fnc
 // var time;
@@ -154,7 +154,7 @@ function quizStart() {
 
 
     quiestion.innerHTML = quiestionQuiz[emptyString].quiestion;
-    console.log(emptyString)
+    // console.log(emptyString)
     nextbuttonup.className = "hide"
     quizLI.innerHTML = ""
 
@@ -178,7 +178,7 @@ function quizStart() {
 function next(eleme) {
     if (emptyString < quiestionQuiz.length - 1) {
         count.innerHTML++
-        // emptyString++
+        emptyString++
 
     } else {
         quizContainer.style.display = "none"
@@ -194,24 +194,33 @@ function liHover(par) {
     nextbuttonup.className = "show";
     var listItem = quizLI.getElementsByTagName("li")
     var quizList = document.getElementById("quizList")
+    // console.log(quizList)
 
     if (par.innerHTML == quiestionQuiz[emptyString].answer) {
         quizList.style.background = "green"
-        par.style.pointerEvents = "none"
-        console.log("macth")
+        // listItem.style.pointerEvents ="none"
+        // console.log("macth")
     } else {
-        par.style.pointerEvents = "none";
+        // par.style.pointerEvents = "none";
         par.style.backgroundColor = "red"
-        console.log("no Macth")
+        // console.log("no Macth")
     }
 
     for (var par of listItem) {
         if (par.innerHTML == quiestionQuiz[emptyString].answer) {
             quizList.style.background = "green"
-            console.log("correct Answer")
+            // console.log("correct Answer")
 
         }
     }
+    for (var par of listItem) {
+        // console.log(par)
+        par.style.pointerEvents = "none"
+        // li.style.cursor = "no-drop !important"
+    }
+
+    // show next Ques btn  the selection
+    // nextQuesBtn.className = "show"
 
     // console.log(quiestionQuiz[emptyString].answer)
 

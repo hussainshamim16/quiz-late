@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <section id="startbtn" class="show">
+    <section id="startbtn" class="hide">
         <button type="submit" onclick="quizStart()">Start Quiz</button>
     </section>
     <section id="quizContainer" class="hide">
@@ -37,10 +37,10 @@
             <div id="quizOptions">
                 <ul id="quizLI">
                     
-                    <li onclick="liHover(this)" id="quizLet">programin Language</li>
+                    <!-- <li onclick="liHover(this)" id="quizLet">programin Language</li>
                     <li onclick="liHover(this)">tag Language</li>
                     <li onclick="liHover(this)">scripting Language</li>
-                    <li  onclick="liHover(this)">low Language</li>
+                    <li  onclick="liHover(this)">low Language</li> -->
                 </ul>
             </div>
         </div>
@@ -55,6 +55,9 @@
                 <button type="submit" onclick="next(this)" class="hide" id="nextbuttonup">Next Quiz</button>
             </div>
         </div>
+    </section>
+    <section id="resultUI">
+        <h1>YOU ARE <span id="persontage">50%</span></h1>
     </section>
     <script src="./script.js"></script>
 </body>
