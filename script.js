@@ -26,6 +26,7 @@ var count = document.getElementById("count")
 var total = document.getElementById("total")
 var nextBtn = document.getElementById("nextBtn")
 var nextbuttonup = document.getElementById("nextbuttonup")
+var tryAgain = document.getElementById("tryAgain")
 // resultUI
 
 var resultUI = document.getElementById("resultUI")
@@ -164,10 +165,12 @@ var quiestionQuiz = [
 //     timeCounter++
 //     quizTime.innerHTML = timeCounter
 // }
+
+// timer 
 timerInterval = 0
 
 const timerElement = quizTime;
-var timeRemaining = 59;
+var timeRemaining = 60;
 
 function updateTimer() {
     timerElement.textContent = timeRemaining;
@@ -176,17 +179,49 @@ function updateTimer() {
     if (timeRemaining < 0) {
         clearInterval(timerInterval);
         timerElement.textContent = "Time's up!";
+        quizContainer.innerHTML = "Time Up";
+        
+
+        // quizContainer.style.border = "1px solid red"
+        quizContainer.style.fontSize = "2rem"
+        quizContainer.style.color = "#fdbe34"
+        quizContainer.style.fontWeight = "bold"
+        quizContainer.style.textTransform = "uppercase"
+        quizContainer.style.fontFamily = "'Jost', sans-serif";
+        quizContainer.style.textAlign = "center"
+        var button = document.createElement("a")
+        button.style.width = "20%"
+        button.style.fontSize = "18px"
+        button.style.textDecoration = "none"
+        button.style.color = "black"
+        button.style.margin = "0px auto"
+        button.style.backgroundColor = "#fdbe34"
+        button.style.border = "none"
+        button.style.padding = "10px 20px"
+        button.style.borderRadius = "20px"
+        button.style.cursor = "pointer"
+        // button.setAttribute("onClick","ret(this)")
+        button.href = "./same.html"
+        button.innerHTML = "Return"
+        quizContainer.appendChild(button)
+        return
     }
 
 }
 
+// function ret(rate){
+//     rate.
+// }
+
+
 var timerInterval = setInterval(updateTimer, 1000);
 
+// timer --------------- 
 
 
 // quiz header
 
-nameOfStd.innerHTML = localStorage.getItem("student Name")
+nameOfStd.innerHTML = localStorage.getItem("student Name").toUpperCase()
 rollNmuberOfStd.innerHTML = localStorage.getItem("student Roll Number")
 
 
@@ -342,31 +377,37 @@ function liHover(par) {
             persontage.innerHTML = "50%";
             result.innerText = 'PASS 😊';
             result.style.color = "#fffddc"
+            tryAgain.innerHtml = "blue"
             break;
         case 6:
             persontage.innerHTML = "60%";
             result.innerText = 'PASS 😚';
             result.style.color = "#fffddc"
+            tryAgain.innerHtml = "blue"
             break;
         case 7:
             persontage.innerHTML = "70%";
             result.innerText = 'PASS NICE! 🙂';
             result.style.color = "#fffddc"
+            tryAgain.innerText = "Return"
             break;
         case 8:
             persontage.innerHTML = "80%";
             result.innerText = 'PASS GOOD JOB 🤗';
             result.style.color = "#fffddc"
+            tryAgain.innerText = "Return"
             break;
         case 9:
             persontage.innerHTML = "90%";
             result.innerText = 'PASS VERY GOOD 🤩';
             result.style.color = "#fffddc"
+            tryAgain.innerText = "Return"
             break;
         case 10:
             persontage.innerHTML = "100%";
             result.innerText = 'PASS EXELLENT 😎';
             result.style.color = "#fffddc"
+            tryAgain.innerText = "Return"
             break;
     
         default:
@@ -384,5 +425,5 @@ function returnn() {
     // resultUI.className = "hide"
     // // console.log("show")
     // startbtn.style.display ="block"
-    fo.action = "./index.html"
+    fo.action = "./same.html"
 }

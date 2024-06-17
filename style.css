@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Merienda:wght@300..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Merienda:wght@300..900&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 :root{
     --light:#a45fe6;
@@ -9,8 +9,9 @@
 }
 *{
 
-    font-family: "Merienda", cursive;
+    /* font-family: "Merienda", cursive; */
     font-family: "Jost", sans-serif;
+    /* text-transform: uppercase; */
 }
 body{
     background-image: url(./images/10444284.jpg);
