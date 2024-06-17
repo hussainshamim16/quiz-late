@@ -25,6 +25,10 @@ body{
     visibility: visible;
 }
 
+#persontage{
+    color: var(--yellow);
+}
+
 li{
     /* background-color: #ff00009f; */
     /* background-color: #0004ff9f; */
