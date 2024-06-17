@@ -31,33 +31,7 @@ var nextbuttonup = document.getElementById("nextbuttonup")
 
 // fnc section
 
-// student form data 
-function stdSumbit(element) {
-    if (!stdName.value) {
-        console.log("error")
-        nameError.className = "show"
-        return
-    } else {
-        console.log("solve")
-        nameError.className = "hide"
-    }
-    if (!stdRollNumber.value) {
-        console.log("error")
-        rollNumbererror.className = "show"
-        return
-    } else {
-        rollNumbererror.className = "hide";
-        startbtn.className = "show"
-        stdLogin.style.display = "none"
-        console.log("solve")
-        
-    }
-    
-   var sname = localStorage.setItem("student Name", stdName.value)
-    var sroll = localStorage.setItem("student Roll Number", stdRollNumber.value)
-        stdName.value = ""
-        stdRollNumber.value = ""
-}
+
 
 /// quiz section;
 
@@ -112,7 +86,7 @@ console.log(quiestionQuiz)
 
 // quiz header
 
-nameOfStd.innerHTML = localStorage.getItem("student Roll Number")
+nameOfStd.innerHTML = localStorage.getItem("student Name")
 rollNmuberOfStd.innerHTML = localStorage.getItem("student Roll Number")
 quizTime.innerHTML = "01:00";
 // quiestion quiz
