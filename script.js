@@ -29,7 +29,9 @@ var nextbuttonup = document.getElementById("nextbuttonup")
 // resultUI
 
 var resultUI = document.getElementById("resultUI")
-
+var persontage = document.getElementById("persontage")
+var result = document.getElementById("result")
+var fo = resultUI.getElementsByTagName("form")[0]
 // variable section
 
 // timing(console.log())
@@ -238,13 +240,15 @@ function quizStart() {
 
 }
 
-var correctAnsCount = 0
-var wrongAnsCount = 0
-// NEXT BUTTON
 
+
+// NEXT BUTTON
+  var correctAnsCount = 0
+    var wrongAnsCount = 0
+  
 function next(eleme) {
     if (emptyString < quiestionQuiz.length - 1) {
-        // count.innerHTML++
+        count.innerHTML++
         emptyString++
 
     } else {
@@ -259,24 +263,26 @@ function next(eleme) {
 // console.log(wrong)   
 function liHover(par) {
 
+  
+    // NEXT BUTTON
 
     nextbuttonup.className = "show";
     var listItem = quizLI.getElementsByTagName("li")
     var quizList = document.getElementById("quizList")
-    var ans = quiestionQuiz[emptyString].answer
+    var ans = quiestionQuiz[emptyString].answer;
     // console.log(ans)
     // console.log(quizList)
 
     if (par.innerHTML == ans) {
-        correctAnsCount++
-        par.style.background = "green"
         // listItem.style.pointerEvents ="none"
-        console.log("macth")
+        par.style.background = "green"
+        // console.log("macth")
+        correctAnsCount++
     } else {
-        wrongAnsCount++
         // par.style.pointerEvents = "none";
         par.style.backgroundColor = "red"
-        console.log("no Macth")
+        // console.log("no Macth")
+        wrongAnsCount++
     }
 
     for (var par of listItem) {
@@ -301,23 +307,69 @@ function liHover(par) {
 
     // console.log("correct", correctAnsCount, "wrong", wrongAnsCount)
 
-    // if(correctAnsCount >= 7){
-    // console.log("pass")
-    // }
-    // else{
-    //     console.log("fail")
-    // }
     // quizList.style.backgroundColor ="blue"
+    // console.log("correct",correctAnsCount +" "+"wrong",wrongAnsCount)
+    if(correctAnsCount >= 7){
+        persontage.innerHTML = "70%";
+        result.innerText = 'PASS';
+    }
+    else{
+        persontage.innerHTML = "30%";
+        result.innerText = 'FAIL';
+    }
+    switch (correctAnsCount) {
+        case 1:
+            persontage.innerHTML = "10%";
+            result.innerText = 'FAIL 😭';
+            break;
+        case 2:
+            persontage.innerHTML = "20%";
+            result.innerText = 'FAIL 😫';
+            break;
+        case 3:
+            persontage.innerHTML = "30%";
+            result.innerText = 'FAIL 😓';
+            break;
+        case 4:
+            persontage.innerHTML = "40%";
+            result.innerText = 'FAIL 😥';
+            break;
+        case 5:
+            persontage.innerHTML = "50%";
+            result.innerText = 'PASS 😊';
+            break;
+        case 6:
+            persontage.innerHTML = "60%";
+            result.innerText = 'PASS 😚';
+            break;
+        case 7:
+            persontage.innerHTML = "70%";
+            result.innerText = 'PASS NICE! 🙂';
+            break;
+        case 8:
+            persontage.innerHTML = "80%";
+            result.innerText = 'PASS GOOD JOB 🤗';
+            break;
+        case 9:
+            persontage.innerHTML = "90%";
+            result.innerText = 'PASS VERY GOOD 🤩';
+            break;
+        case 10:
+            persontage.innerHTML = "100%";
+            result.innerText = 'PASS EXELLENT 😎';
+            break;
+    
+        default:
+            break;
+    }
+ 
 }
 
-console.log(correctAnsCount)
-console.log(wrongAnsCount)
+
 // fnc section
 // resultUI
 resultUI.style.textAlign = "center"
-var persontage = document.getElementById("persontage")
-var result = document.getElementById("result")
-var fo = resultUI.getElementsByTagName("form")[0]
+
 function returnn() {
     // resultUI.className = "hide"
     // // console.log("show")
