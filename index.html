@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <section id="startbtn" class="hide">
+    <section id="startbtn" class="show">
         <button type="submit" onclick="quizStart()">Start Quiz</button>
     </section>
     <section id="quizContainer" class="hide">
@@ -56,8 +56,14 @@
             </div>
         </div>
     </section>
-    <section id="resultUI">
-        <h1>YOU ARE <span id="persontage">50%</span></h1>
+    <section id="resultUI"  class="hide">
+        <h3>persontage</h3>
+        <h1 id="persontage">50%</h1>
+        <h3>YOU are !</h3>
+        <h1 id="result">Fail</h1>
+        <form action="JavaScript:void(0)">
+            <button onclick="returnn()">Try Again</button>
+        </form>
     </section>
     <script src="./script.js"></script>
 </body>

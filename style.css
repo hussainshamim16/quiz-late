@@ -10,9 +10,12 @@
 li{
     /* pointer-events: none; */
 }
+h1,h3{
+    text-transform: uppercase;
+}
 
-li::selection{
+li:hover{
 cursor: pointer;
-background-color: red;
+background-color: rgb(224, 224, 224);
 
 }

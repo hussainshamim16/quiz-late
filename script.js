@@ -26,7 +26,9 @@ var count = document.getElementById("count")
 var total = document.getElementById("total")
 var nextBtn = document.getElementById("nextBtn")
 var nextbuttonup = document.getElementById("nextbuttonup")
+// resultUI
 
+var resultUI = document.getElementById("resultUI")
 
 // variable section
 
@@ -40,47 +42,113 @@ var nextbuttonup = document.getElementById("nextbuttonup")
 var quiestionQuiz = [
     {
         id: 1,
-        quiestion: "who is dark color",
+        quiestion: "What is JavaScript primarily used for ?",
         option: {
-            a: "yellow 1",
-            b: "yellow 1",
-            c: "yellow 1",
-            d: "yellow 1",
+            a: "Server side scripting",
+            b: "Adding interactivity to web pages",
+            c: "Managing databases",
+            d: "Creating static web pages",
         },
-        answer: "yellow 1"
+        answer: "Adding interactivity to web pages"
     },
     {
         id: 2,
-        quiestion: "who is simple color",
+        quiestion: "Which operator checks for both value and type equality",
         option: {
-            a: "apple 2",
-            b: "apple 2",
-            c: "apple 2",
-            d: "apple 2",
+            a: "==",
+            b: "=",
+            c: "===",
+            d: "==!",
         },
-        answer: "apple 2"
+        answer: "==="
     },
     {
         id: 3,
-        quiestion: "who is extra dark color",
+        quiestion: "How do you declare a variable that cannot be reassigned in Javascript",
         option: {
-            a: "black 3",
-            b: "black",
-            c: "blak 3",
-            d: "blck",
+            a: "const",
+            b: "let",
+            c: "static",
+            d: "var",
         },
-        answer: "black 3"
+        answer: "const"
     },
     {
         id: 4,
-        quiestion: "who is sabz color",
+        quiestion: "How do you access the property name of the object person",
         option: {
-            a: "Banana 4",
-            b: "Banana 4",
-            c: "Banana 4",
-            d: "Banana 4",
+            a: "name.person",
+            b: "person->name",
+            c: "person[name]",
+            d: "person.name",
         },
-        answer: "Banana 4"
+        answer: "person.name"
+    },
+    {
+        id: 5,
+        quiestion: "Where can a variable declared with let be accessed",
+        option: {
+            a: "Within the function it is declared",
+            b: "Within the block it is declared",
+            c: "Anywhere in the program",
+            d: "Globally",
+        },
+        answer: "Within the block it is declared"
+    },
+    {
+        id: 6,
+        quiestion: "How do you write 'Hello, World!' in an alert box in JavaScript",
+        option: {
+            a: 'alertBox("Hello, World!");',
+            b: 'alert("Hello, World!");',
+            c: 'message("Hello, World!")',
+            d: 'msg("Hello, World!");',
+        },
+        answer: 'alert("Hello, World!");'
+    },
+    {
+        id: 7,
+        quiestion: "Which data type is NOT a primitive type in JavaScript",
+        option: {
+            a: "String",
+            b: "Object",
+            c: "Boolean",
+            d: "Number",
+        },
+        answer: "Object"
+    },
+    {
+        id: 8,
+        quiestion: "How do you create a variable in JavaScript",
+        option: {
+            a: "var",
+            b: "let",
+            c: "const",
+            d: "All of the above",
+        },
+        answer: "All of the above"
+    },
+    {
+        id: 9,
+        quiestion: 'What is the result of the expression 5 + "5" in JavaScript',
+        option: {
+            a: "10",
+            b: "'10'",
+            c: "55",
+            d: '"55"',
+        },
+        answer: '"55"'
+    },
+    {
+        id: 10,
+        quiestion: "How do you add a new element to the end of an array",
+        option: {
+            a: "add",
+            b: "push",
+            c: "append",
+            d: "insert",
+        },
+        answer: "push"
     }
 ];
 
@@ -95,28 +163,23 @@ var quiestionQuiz = [
 //     quizTime.innerHTML = timeCounter
 // }
 timerInterval = 0
-// Get the element where the timer will be displayed
-const timerElement = quizTime;
 
-// Set the initial time (in seconds)
+const timerElement = quizTime;
 var timeRemaining = 59;
 
-// Function to update the timer every second
 function updateTimer() {
-    // Display the current time
     timerElement.textContent = timeRemaining;
-
-    // Decrease the time by 1
     timeRemaining--;
 
-    // Check if time has run out
     if (timeRemaining < 0) {
         clearInterval(timerInterval);
         timerElement.textContent = "Time's up!";
     }
+
 }
 
-// Call the updateTimer function every 1 second (1000 milliseconds)
+var timerInterval = setInterval(updateTimer, 1000);
+
 
 
 // quiz header
@@ -132,8 +195,10 @@ rollNmuberOfStd.innerHTML = localStorage.getItem("student Roll Number")
 // footer
 
 
-var correct;
-var wrong;
+// var correct = 0;
+// var wrong = 0;
+// console.log(correct)
+// console.log(wrong)
 var emptyString = 0
 total.innerHTML = quiestionQuiz.length
 
@@ -148,7 +213,7 @@ total.innerHTML = quiestionQuiz.length
 /// start button
 function quizStart() {
     // time = setInterval(en, 10);
-    var timerInterval = setInterval(updateTimer, 1000);
+
     startbtn.style.display = "none"
     quizContainer.className = "show"
 
@@ -173,43 +238,52 @@ function quizStart() {
 
 }
 
+var correctAnsCount = 0
+var wrongAnsCount = 0
 // NEXT BUTTON
 
 function next(eleme) {
     if (emptyString < quiestionQuiz.length - 1) {
-        count.innerHTML++
+        // count.innerHTML++
         emptyString++
 
     } else {
         quizContainer.style.display = "none"
+        resultUI.className = "show"
 
     }
     quizStart()
 }
 
+// console.log(correct) 
+// console.log(wrong)   
 function liHover(par) {
-
 
 
     nextbuttonup.className = "show";
     var listItem = quizLI.getElementsByTagName("li")
     var quizList = document.getElementById("quizList")
+    var ans = quiestionQuiz[emptyString].answer
+    // console.log(ans)
     // console.log(quizList)
 
-    if (par.innerHTML == quiestionQuiz[emptyString].answer) {
-        quizList.style.background = "green"
+    if (par.innerHTML == ans) {
+        correctAnsCount++
+        par.style.background = "green"
         // listItem.style.pointerEvents ="none"
-        // console.log("macth")
+        console.log("macth")
     } else {
+        wrongAnsCount++
         // par.style.pointerEvents = "none";
         par.style.backgroundColor = "red"
-        // console.log("no Macth")
+        console.log("no Macth")
     }
 
     for (var par of listItem) {
         if (par.innerHTML == quiestionQuiz[emptyString].answer) {
-            quizList.style.background = "green"
-            // console.log("correct Answer")
+
+            par.style.background = "green"
+            // console.log("correct Answer" , quiestionQuiz[emptyString].answer)
 
         }
     }
@@ -225,7 +299,28 @@ function liHover(par) {
     // console.log(quiestionQuiz[emptyString].answer)
 
 
+    // console.log("correct", correctAnsCount, "wrong", wrongAnsCount)
+
+    // if(correctAnsCount >= 7){
+    // console.log("pass")
+    // }
+    // else{
+    //     console.log("fail")
+    // }
     // quizList.style.backgroundColor ="blue"
 }
-// fnc section
 
+console.log(correctAnsCount)
+console.log(wrongAnsCount)
+// fnc section
+// resultUI
+resultUI.style.textAlign = "center"
+var persontage = document.getElementById("persontage")
+var result = document.getElementById("result")
+var fo = resultUI.getElementsByTagName("form")[0]
+function returnn() {
+    // resultUI.className = "hide"
+    // // console.log("show")
+    // startbtn.style.display ="block"
+    fo.action = "./index.html"
+}
