@@ -14,6 +14,7 @@ var nameOfStd = document.getElementById("nameOfStd")
 var rollNmuberOfStd = document.getElementById("rollNmuberOfStd")
 var quizAndTime = document.getElementById("quizAndTime")
 var quizTime = document.getElementById("quizTime")
+var quizTimer ;
 var qiuzUI = document.getElementById("qiuzUI")
 var Quizquiestion = document.getElementById("Quizquiestion")
 var quiestion = document.getElementById("quiestion")
@@ -29,6 +30,7 @@ var nextbuttonup = document.getElementById("nextbuttonup")
 
 // variable section
 
+// timing(console.log())
 // fnc section
 
 
@@ -84,11 +86,46 @@ var quiestionQuiz = [
 
 console.log(quiestionQuiz)
 
+// timing fnc
+// var time;
+// var timeCounter = 0;
+
+// function en(){
+//     timeCounter++
+//     quizTime.innerHTML = timeCounter
+// }
+timerInterval = 0
+// Get the element where the timer will be displayed
+const timerElement = quizTime;
+
+// Set the initial time (in seconds)
+var timeRemaining = 59;
+
+// Function to update the timer every second
+function updateTimer() {
+    // Display the current time
+    timerElement.textContent = timeRemaining;
+
+    // Decrease the time by 1
+    timeRemaining--;
+
+    // Check if time has run out
+    if (timeRemaining < 0) {
+        clearInterval(timerInterval);
+        timerElement.textContent = "Time's up!";
+    }
+}
+
+// Call the updateTimer function every 1 second (1000 milliseconds)
+
+
 // quiz header
 
 nameOfStd.innerHTML = localStorage.getItem("student Name")
 rollNmuberOfStd.innerHTML = localStorage.getItem("student Roll Number")
-quizTime.innerHTML = "01:00";
+
+
+// var quizTimer = 
 // quiestion quiz
 // quiestion.innerHTML = "Html is a good way"
 // quizOptions.innerHTML = "red"
@@ -110,7 +147,8 @@ total.innerHTML = quiestionQuiz.length
 // START Quiz
 /// start button
 function quizStart() {
-
+    // time = setInterval(en, 10);
+    var timerInterval = setInterval(updateTimer, 1000);
     startbtn.style.display = "none"
     quizContainer.className = "show"
 
