@@ -1,5 +1,5 @@
 # quizliy
-developer : Muhammad Hussain Shamim 👀
+
 
 # Welcome to Your Ultimate JavaScript Quiz Experience!
 
@@ -33,3 +33,5 @@ Get Started Today!
 Explore the world of JavaScript in a way that's both fun and informative. Start your journey now and see how much you can learn and achieve with our quiz app.
 
 Try the Quiz Now
+
+# developer : Muhammad Hussain Shamim 👀
