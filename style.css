@@ -216,6 +216,7 @@ width: 90%;
   border: none;
   font-size: 15px;
    box-shadow: 4px 10px 20px 2px #00000080;
+   text-transform: uppercase;
 }
 #stdLogin form button{
     background-color: var(--white);
@@ -229,4 +230,20 @@ width: 90%;
     color: black;
     font-size: 17px;
      box-shadow: 4px 10px 20px 2px #00000073;
+}
+#nameError{
+    background-color: var(--white);
+    margin:10px;
+    width: 100%;
+    background: var(--yellow);
+    color: black;
+    font-weight: 500;
+}
+#rollNumbererror{
+    background-color: var(--white);
+    margin:10px;
+    width: 100%;
+    background: var(--yellow);
+    color: black;
+    font-weight: 500;
 }

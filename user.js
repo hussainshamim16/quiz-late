@@ -26,6 +26,6 @@
             localStorage.setItem("student Roll Number", stdRollNumber.value)
                 stdName.value = ""
                 stdRollNumber.value = ""
-                form.action ="/index.html"
+                form.action ="./same.html"
         }
     }
