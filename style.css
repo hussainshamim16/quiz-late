@@ -1,5 +1,9 @@
 
-
+body{
+    background-image: url(./images/backshot.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .hide{
     visibility: hidden;
 }
